@@ -26,6 +26,12 @@ class Queue:
         self.queue[self.rear] = value
         self.count = self.count + 1
 
+    def find(self, value):
+        if self.isEmpty():
+            print('Очередь пуста!')
+            exit(-1)
+        return self.queue.index(value) + 1
+
     def peek(self):
         if self.isEmpty():
             print('Очередь пуста!')
@@ -43,4 +49,22 @@ class Queue:
 
 
 if __name__ == '__main__':
-    q = Queue(5)
+    q = Queue(3)
+    search_element = 6
+    q.enqueue(5)
+    q.enqueue(6)
+    q.enqueue(7)
+    print(f'Элемент {search_element} в очереди под номером: ', q.find(search_element))
+    # q.enqueue(4)
+    print('Размер очереди: ', q.size())
+    print('Передний элемент в очереди: ', q.peek())
+    q.dequeue()
+    print('Передний элемент в очереди: ', q.peek())
+
+    q.dequeue()
+    q.dequeue()
+
+    if q.isEmpty():
+        print('Очередь пуста')
+    else:
+        print('Очередь в ожидании действий')
