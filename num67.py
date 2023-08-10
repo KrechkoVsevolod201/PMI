@@ -1,7 +1,7 @@
 import string
 
 
-# суп с   сухариками       должен быть точно
+# суп с   сухариками       должен быть точно    sfsfs ыпывпывпып 2345 яиявав
 
 
 eng_letters = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z"
@@ -28,5 +28,16 @@ def count_words(sentence=str):
     print(counter)
 
 
+def count_words2(sentence=str):
+    counter = 0
+    for i in range(len(sentence)):
+        if i <= len(sentence) - 2:
+            if (sentence[i] != ' ') and sentence[i+1] == ' ':
+                counter += 1
+        elif (sentence[i] != ' ') and sentence[len(sentence) - 1] != ' ':
+            counter += 1
+    print(counter)
+
+
 if __name__ == '__main__':
-    count_words(get_string())
+    count_words2(get_string())
